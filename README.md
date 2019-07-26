@@ -19,18 +19,19 @@ were created.
 
 ## Assumptions
 
-The data set used for the machine learning model is available at [Exoplanet Data Source](https://www.kaggle.com/nasa/kepler-exoplanet-search-results)
+The data set used for the machine learning model is available at [Exoplanet Data Source](https://www.kaggle.com/nasa/kepler-exoplanet-search-results), but the csv located in the folder Notebook was used.
 
 The algorithms used for the models were:
 
-- Support Vector Machines (SVM) with Linear and Gaussian kernels 
+- Support Vector Machines (SVM) with Linear and Gaussian kernels. The SVM was suggested in the starter code, but 
+   without kernel specification, so I tried two kernels.
 
-- Random Forests
+- Random Forests. A second classifier was proposed, based on the results of the SVM.
 
 Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV() was used.
   
 
-## Process followed
+## Steps
 
 ### Preprocess the data
 
@@ -69,12 +70,12 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
  
  * Use `GridSearch` to tune model parameters.
  
-   To increase the accuracy of the SVM classifiers, tuning parameters were explored: 
-   1) the regularization parameter termed as C parameter in Python’s Sklearn library), 
+   To increase the accuracy of the SVM classifiers, tuning parameters were explored: 1) the 
+   regularization parameter termed as C parameter in Pythonâ€™s Sklearn library), 
    that tells the SVM optimization how much you want to avoid misclassifying each training 
    example, and 2) the gamma parameter, that defines how far the influence 
-   of a single training example reaches, with low values meaning ‘far’ and high values 
-   meaning ‘close’. 
+   of a single training example reaches, with low values meaning â€˜farâ€™ and high values 
+   meaning â€˜closeâ€™. 
  
    For Ramdom Forests the tuning parameters explored were: 1) max_features which is 
    the size of the random subsets of features to consider when splitting a node. 
@@ -93,9 +94,10 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 
 ### Evaluate Model Performance
 
-    __Results__
+  __Results__
 
-	`SVM Linear`
+  `SVM Linear`
+  
 	 Training Data Score: 0.8533089356511131
 	 Testing Data Score: 0.8444647758462946
 
@@ -112,17 +114,17 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 	     macro avg       0.86      0.84      0.84      2186
 	  weighted avg       0.88      0.88      0.88      2186
   
-
-  	`SVM Radial Basis Function`
-     Training Data Score: 0.8325709057639524
-     Testing Data Score: 0.807868252516011
+  `SVM Radial Basis Function`
+  
+       Training Data Score: 0.8325709057639524
+       Testing Data Score: 0.807868252516011
 	 
-     Best Training Parameters: {'C': 50, 'gamma': 0.005}
-     Best Training Score: 0.8388228118328759
+       Best Training Parameters: {'C': 50, 'gamma': 0.005}
+       Best Training Score: 0.8388228118328759
 
-	 Testing Scores
+	Testing Scores
 	               precision    recall  f1-score   support
-    FALSE POSITIVE       0.70      0.54      0.61       523
+        FALSE POSITIVE       0.70      0.54      0.61       523
 	     CONFIRMED       0.67      0.78      0.72       594
 	     CANDIDATE       0.98      1.00      0.99      1069
 
@@ -130,12 +132,12 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 	     macro avg       0.78      0.77      0.77      2186
 	  weighted avg       0.83      0.83      0.82      2186
   
- 
-    `Random Forests`
-     Training Data Score: 0.9149130832570905
-     Testing Data Score: 0.8924977127172918
+  `Random Forests`
+   
+       Training Data Score: 0.9149130832570905
+       Testing Data Score: 0.8924977127172918
 	 
-	 Feature Importances - Top 5
+       Feature Importances - Top 5
 	     koi_fpflag_co: 0.11411908507572308
 	     koi_fpflag_nt: 0.09748274732279168
 	     koi_fpflag_ss: 0.06908554290116906
@@ -166,13 +168,13 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 		 is the product of the planet star radius ratio and the stellar radius.
 
 
-	 __Conclussion__
+  __Conclussion__
 
      Amongst the Linear kernel and the Gaussian kernel (Radial Basis Function), 
      the Linear kernel performed slightly better when predicting classes 
 	 FALSE POSITIVE and CONFIRMED. 
 	 
-	 Random Forests performed slightly better than Linear Kernel (89% vs. 88%) and the
+     Random Forests performed slightly better than Linear Kernel (89% vs. 88%) and the
 	 feature importances were obtained for further research.
 
 
