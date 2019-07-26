@@ -3,13 +3,13 @@
 ## Background
 
 The Kepler Space Observatory is a NASA-build satellite that was launched in 2009. The telescope
-is dedicated to searching for exoplanets in star systems besides our own, with the ultimate goal 
+is dedicated to searching for exoplanets in star systems besides our own, with the  goal 
 of possibly finding other habitable planets besides our own. 
 
 The original mission ended in 2013 due to mechanical failures, but the telescope has
 nevertheless been functional since 2014 on a "K2" extended mission.
 
-Kepler had verified 1284 new exoplanets as of May 2016. As of October 2017 there are over 
+Kepler had verified 1284 new exoplanets as of May 2016. As of October 2017, there are over 
 3,000 confirmed exoplanets total (using all detection methods, including ground-based ones). 
 The telescope is still active and continues to collect new data on its extended mission.
 
@@ -47,7 +47,7 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
  
  * Use `MinMaxScaler` to scale the numerical data. 
    MinMaxScaler rescales the data set such that all feature values are in the range [0, 1].
-   However, this scaling compress all inliers in the narrow range [0, 0.005] 
+   However, this scaling compresses all inliers in the narrow range [0, 0.005] 
    for the transformed number of data.
    MinMaxScaler is very sensitive to the presence of outliers.
 
@@ -63,7 +63,7 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
  
    __Random forests__ are many decision trees, built on different random subsets (drawn 
    with replacement) of the data, and using different random subsets (drawn without 
-   replacement) of the features for each split.  This makes the trees different from each other,
+   replacement) of the features for each split.  This makes the trees different from each other
    and makes them overfit to different aspects. Then, their predictions are averaged, 
    leading to a smoother estimate that overfits less.
 
@@ -77,18 +77,18 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
    of a single training example reaches, with low values meaning ‘far’ and high values 
    meaning ‘close’. 
  
-   For Ramdom Forests the tuning parameters explored were: 1) max_features which is 
+   For Random Forests the tuning parameters explored were: 1) max_features which is 
    the size of the random subsets of features to consider when splitting a node. 
    By setting max_features differently, you'll get a "true" random forest, and 
    2) max_depth that represents the depth of each tree in the forest. The deeper the 
-   tree, the more splits it has and it captures more information about the data. 
+   tree, the more splits it has, and it captures more information about the data. 
 
  * Get the results from the classifiers.
 
    After fitting the SVM models, the best scores for the training set and the best parameters
    were obtained, and after the predictions, the classification reports were printed.
 
-   For the Random Forests, after fitting the model the features importances were printed 
+   For the Random Forests, after fitting the model the __feature importances__ were printed 
    and the scores for the training and the testing data sets were calculated.
  
 
@@ -124,7 +124,7 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 
 	Testing Scores
 	               precision    recall  f1-score   support
-        FALSE POSITIVE       0.70      0.54      0.61       523
+    FALSE POSITIVE       0.70      0.54      0.61       523
 	     CONFIRMED       0.67      0.78      0.72       594
 	     CANDIDATE       0.98      1.00      0.99      1069
 
@@ -145,30 +145,30 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 	     koi_prad:      0.04536258281754761
 
 	     Feature description
-	     __koi_fpflag_co__. Centroid Offset Flag. The source of the signal is from a nearby star, 
-		  as inferred by measuring the centroid location of the image both in and out of transit, 
-		  or by the strength of the transit signal in the target's outer (halo) pixels as 
-	      compared to the transit signal from the pixels in the optimal (or core) aperture.
+	     koi_fpflag_co. Centroid Offset Flag. The source of the signal is from a nearby star, 
+	       as inferred by measuring the centroid location of the image both in and out of transit, 
+	       or by the strength of the transit signal in the target's outer (halo) pixels as 
+	       compared to the transit signal from the pixels in the optimal (or core) aperture.
 	  
-	     __koi_fpflag_nt__. Not Transit-Like Flag. A Kepler Objects of Interest (KOI) whose 
-		 light curve is not consistent with that of a transiting planet. This includes, 
-		 but is not limited to, instrumental artifacts, non-eclipsing variable stars, 
-		 and spurious detections.
+	     koi_fpflag_nt. Not Transit-Like Flag. A Kepler Objects of Interest (KOI) whose 
+	       light curve is not consistent with that of a transiting planet. This includes, 
+	       but is not limited to, instrumental artifacts, non-eclipsing variable stars, 
+	       and spurious detections.
 		 
-		 __koi_fpflag_ss__. Stellar Eclipse Flag. A KOI that is observed to have a significant 
-		 secondary event, transit shape, or out-of-eclipse variability, which indicates that 
-		 the transit-like event is most likely caused by an eclipsing binary. However, selfluminous,
-	     hot Jupiters with a visible secondary eclipse will also have this flag set, but with a 
-	     disposition of PC.
+	      koi_fpflag_ss. Stellar Eclipse Flag. A KOI that is observed to have a significant 
+		secondary event, transit shape, or out-of-eclipse variability, which indicates that 
+		the transit-like event is most likely caused by an eclipsing binary. However, self luminous,
+	        hot Jupiters with a visible secondary eclipse will also have this flag set, but with a 
+	        disposition of PC.
 		 
-		 __koi_model_snr__. Transit Signal-to-Noise. Transit depth normalized by the mean 
-		 uncertainty in the flux during the transits.
+	      koi_model_snr. Transit Signal-to-Noise. Transit depth normalized by the mean 
+	        uncertainty in the flux during the transits.
 		 
-		 __koi_prad__. Planetary Radius (Earth radii). The radius of the planet. Planetary radius 
-		 is the product of the planet star radius ratio and the stellar radius.
+	      koi_prad__. Planetary Radius (Earth radii). The radius of the planet. Planetary radius 
+		is the product of the planet star radius ratio and the stellar radius.
 
 
-  __Conclussion__
+  __Conclusion__
 
      Amongst the Linear kernel and the Gaussian kernel (Radial Basis Function), 
      the Linear kernel performed slightly better when predicting classes 
@@ -180,7 +180,7 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 
 ## Notebook
 
-	 See the Jupyter Notebook [here](/Notebook/exoplanet.ipynb).
+See the Jupyter Notebook [here](/Notebook/exoplanet.ipynb).
 
 	 
 ## Resources
@@ -193,6 +193,9 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 
 * More on
   [SVM](https://towardsdatascience.com/https-medium-com-pupalerushikesh-svm-f4b42800e989)
-  [SVM](https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72)
-  [Random Forests](https://stackoverflow.com/questions/23939750/understanding-max-features-parameter-in-randomforestregressor)
-  [Random Forests](https://medium.com/all-things-ai/in-depth-parameter-tuning-for-random-forest-d67bb7e920d)
+  
+  [Machine Learning SVM](https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72)
+  
+  [Max Features Parameter Random Forests](https://stackoverflow.com/questions/23939750/understanding-max-features-parameter-in-randomforestregressor)
+  
+  [Tuning Random Forests](https://medium.com/all-things-ai/in-depth-parameter-tuning-for-random-forest-d67bb7e920d)
