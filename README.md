@@ -39,7 +39,8 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
   Drop the columns rowid, kepid, kepoi_name, kepler_name, koi_pdisposition, koi_score, 
   koi_tce_delivname and those where all values were null.
 
- * Set the target as the column `koi_disposition` and get the target names.
+ * Set the target as the column `koi_disposition`, get the target names, and use Label 
+ Encoding for the prediction target (y).
 
  * Perform feature selection (40 in total)
 
@@ -138,12 +139,12 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
        Testing Data Score: 0.8924977127172918
 	 
        Feature Importances - Top 5
-	     koi_fpflag_co: 0.10882413723054071
-	     koi_fpflag_nt: 0.09734814374013237
-	     koi_fpflag_ss: 0.06554677640545675
-	     koi_prad:      0.054709465771780555
-	     koi_model_snr: 0.053357315667707524
-
+	     koi_fpflag_co: 0.10917494033151681
+	     koi_fpflag_nt: 0.09456840810216313
+	     koi_fpflag_ss: 0.06697703960594788
+	     koi_model_snr: 0.05673382463013196
+	     koi_prad:      0.04810826077520824
+	      
      Feature description
 	     koi_fpflag_co. Centroid Offset Flag. The source of the signal is from a nearby star, 
 	       as inferred by measuring the centroid location of the image both in and out of transit, 
@@ -170,13 +171,20 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 
   __Conclusion__
 
-     Amongst the Linear kernel and the Gaussian kernel (Radial Basis Function), 
+     Amongst the SVM Linear kernel and the SVM Gaussian kernel (Radial Basis Function), 
      the Linear kernel performed slightly better when predicting classes 
 	 FALSE POSITIVE and CONFIRMED. 
 	 
      Random Forests performed slightly better than Linear Kernel (89% vs. 88%) 
-     when predicting classes, and the feature importances were obtained for 
-     further research.
+     when predicting classes, on average. The feature importances were obtained for 
+     a deeper analysis. 
+     
+     In this analysis, accuracy scores were calculated for the original model 
+     (40 features - 0.8947849954254345) and for a model that contained only those
+     features with threshold=0.03 (8 features - 0.8847209515096066). 
+     
+     Therefore, for a small difference in accuracy (89% vs. 88%) the number of 
+     features could be considerably reduced in similar models.
 
 
 ## Notebook
@@ -202,3 +210,5 @@ See the Jupyter Notebook [here](/Notebook/exoplanet.ipynb).
   [Tuning Random Forests](https://medium.com/all-things-ai/in-depth-parameter-tuning-for-random-forest-d67bb7e920d)
   
   [Explaining Feature Importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
+  
+  [Feature Selection Using Random Forest (https://chrisalbon.com/machine_learning/trees_and_forests/feature_selection_using_random_forest/)
