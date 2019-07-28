@@ -169,17 +169,17 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 
   __Conclusion__
 
-     Amongst the SVM Linear kernel and the SVM Gaussian kernel (Radial Basis Function), the Linear kernel performed 
-     slightly better when predicting classes FALSE POSITIVE and CONFIRMED. 
+     Amongst the SVM Linear kernel and the SVM Gaussian kernel (Radial Basis Function), the Linear kernel 
+     performed slightly better when predicting classes FALSE POSITIVE and CONFIRMED. 
 	 
-     Random Forests performed slightly better than Linear Kernel (89% vs. 88%) when predicting classes, on average. 
-     The feature importances were obtained for a deeper analysis. 
+     Random Forests performed slightly better than Linear Kernel (89% vs. 88%) when predicting classes, on 
+     average. The feature importances were obtained for a deeper analysis. 
      
-     In this analysis, accuracy scores were calculated for the original model (40 features - 0.8947849954254345) and 
-     for a model that contained only those features with threshold=0.03 (8 features - 0.8847209515096066). 
+     In this analysis, accuracy scores were calculated for the original model (40 features - 0.8947849954254345) 
+     and for a model that contained only those features with threshold=0.03 (8 features - 0.8847209515096066). 
      
-     Therefore, for a small difference in accuracy (89% vs. 88%) the number of features could be considerably reduced 
-     in similar models.
+     Therefore, for a small difference in accuracy (89% vs. 88%) the number of features could be considerably 
+     reduced in similar models.
 
 
 ## Notebook
