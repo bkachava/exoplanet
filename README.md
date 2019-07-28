@@ -146,45 +146,40 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
 	     koi_prad:      0.04810826077520824
 	      
      Feature description
-	     koi_fpflag_co. Centroid Offset Flag. The source of the signal is from a nearby star, 
-	       as inferred by measuring the centroid location of the image both in and out of transit, 
-	       or by the strength of the transit signal in the target's outer (halo) pixels as 
-	       compared to the transit signal from the pixels in the optimal (or core) aperture.
+	     koi_fpflag_co. Centroid Offset Flag. The source of the signal is from a nearby star, as inferred 
+	       by measuring the centroid location of the image both in and out of transit, or by the strength of 
+	       the transit signal in the target's outer (halo) pixels as compared to the transit signal from the 
+	       pixels in the optimal (or core) aperture.
 	  
-	     koi_fpflag_nt. Not Transit-Like Flag. A Kepler Objects of Interest (KOI) whose 
-	       light curve is not consistent with that of a transiting planet. This includes, 
-	       but is not limited to, instrumental artifacts, non-eclipsing variable stars, 
-	       and spurious detections.
+	     koi_fpflag_nt. Not Transit-Like Flag. A Kepler Objects of Interest (KOI) whose light curve is not 
+	       consistent with that of a transiting planet. This includes, but is not limited to, instrumental 
+	       artifacts, non-eclipsing variable stars, and spurious detections.
 		 
-	      koi_fpflag_ss. Stellar Eclipse Flag. A KOI that is observed to have a significant 
-		secondary event, transit shape, or out-of-eclipse variability, which indicates that 
-		the transit-like event is most likely caused by an eclipsing binary. However, self luminous,
-	        hot Jupiters with a visible secondary eclipse will also have this flag set, but with a 
-	        disposition of PC.
+	      koi_fpflag_ss. Stellar Eclipse Flag. A KOI that is observed to have a significant secondary event, 
+	        transit shape, or out-of-eclipse variability, which indicates that the transit-like event is most 
+		likely caused by an eclipsing binary. However, self luminous, hot Jupiters with a visible secondary
+		eclipse will also have this flag set, but with a disposition of PC.
 		 
-	      koi_model_snr. Transit Signal-to-Noise. Transit depth normalized by the mean 
-	        uncertainty in the flux during the transits.
+	      koi_model_snr. Transit Signal-to-Noise. Transit depth normalized by the mean uncertainty in the flux 
+	        during the transits.
 		 
-	      koi_prad__. Planetary Radius (Earth radii). The radius of the planet. Planetary radius 
-		is the product of the planet star radius ratio and the stellar radius.
+	      koi_prad. Planetary Radius (Earth radii). The radius of the planet. Planetary radius is the product 
+	        of the planet star radius ratio and the stellar radius.
 
 
   __Conclusion__
 
-     Amongst the SVM Linear kernel and the SVM Gaussian kernel (Radial Basis Function), 
-     the Linear kernel performed slightly better when predicting classes 
-	 FALSE POSITIVE and CONFIRMED. 
+     Amongst the SVM Linear kernel and the SVM Gaussian kernel (Radial Basis Function), the Linear kernel performed 
+     slightly better when predicting classes FALSE POSITIVE and CONFIRMED. 
 	 
-     Random Forests performed slightly better than Linear Kernel (89% vs. 88%) 
-     when predicting classes, on average. The feature importances were obtained for 
-     a deeper analysis. 
+     Random Forests performed slightly better than Linear Kernel (89% vs. 88%) when predicting classes, on average. 
+     The feature importances were obtained for a deeper analysis. 
      
-     In this analysis, accuracy scores were calculated for the original model 
-     (40 features - 0.8947849954254345) and for a model that contained only those
-     features with threshold=0.03 (8 features - 0.8847209515096066). 
+     In this analysis, accuracy scores were calculated for the original model (40 features - 0.8947849954254345) and 
+     for a model that contained only those features with threshold=0.03 (8 features - 0.8847209515096066). 
      
-     Therefore, for a small difference in accuracy (89% vs. 88%) the number of 
-     features could be considerably reduced in similar models.
+     Therefore, for a small difference in accuracy (89% vs. 88%) the number of features could be considerably reduced 
+     in similar models.
 
 
 ## Notebook
