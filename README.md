@@ -201,6 +201,7 @@ See the Jupyter Notebook [here](/Notebook/exoplanet.ipynb).
 * [Grid Search](https://scikit-learn.org/stable/modules/grid_search.html)
 
 * More on
+
   [SVM](https://towardsdatascience.com/https-medium-com-pupalerushikesh-svm-f4b42800e989)
   
   [Machine Learning SVM](https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72)
@@ -211,4 +212,4 @@ See the Jupyter Notebook [here](/Notebook/exoplanet.ipynb).
   
   [Explaining Feature Importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
   
-  [Feature Selection Using Random Forest] (https://chrisalbon.com/machine_learning/trees_and_forests/feature_selection_using_random_forest/)
+  [Feature Selection Using Random Forest](https://chrisalbon.com/machine_learning/trees_and_forests/feature_selection_using_random_forest/)
