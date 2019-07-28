@@ -138,12 +138,12 @@ Also, a hyper-parameter tuning with the *meta-estimator* function GridSearchCV()
        Testing Data Score: 0.8924977127172918
 	 
        Feature Importances - Top 5
-	     koi_fpflag_co: 0.10709007885037565
-	     koi_fpflag_nt: 0.09885563659626383
-	     koi_fpflag_ss: 0.06956523004404887
-	     koi_model_snr: 0.057922575235696605
-	     koi_prad:      0.04308981824091914
-	     
+	     koi_fpflag_co: 0.10882413723054071
+	     koi_fpflag_nt: 0.09734814374013237
+	     koi_fpflag_ss: 0.06554677640545675
+	     koi_prad:      0.054709465771780555
+	     koi_model_snr: 0.053357315667707524
+
      Feature description
 	     koi_fpflag_co. Centroid Offset Flag. The source of the signal is from a nearby star, 
 	       as inferred by measuring the centroid location of the image both in and out of transit, 
